@@ -4,7 +4,7 @@
         run myLua
     </description>
     <!-- set global properties for this build -->
-    <property name="openresty-home" location="E:\openresty-1.15.8.2-win64"/>
+    <property name="openresty-home" location="D:\openresty-1.15.8.2-win64"/>
     <property name="conf" location="${basedir}/conf"/>
     <property name="src" location="${basedir}/src"/>
     <property name="target-conf" location="${openresty-home}/conf"/>
