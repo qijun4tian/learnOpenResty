@@ -9,10 +9,22 @@ local json =  require("cjson")
 local function main()
     str = '{"hobby":["film","music","read"],"is_male":false,"name":"zhangsan","id":1,"age":null}'
     local obj = json.decode(str)
-    ngx.say("字符串到lua对象:")
-    ngx.say("obj.age ",obj.is_male)
+    --ngx.say("字符串到lua对象:")
+    --ngx.say("obj.age ",obj.is_male)
+    ngx.log(ngx.INFO, "INSERT");
     local data = ngx.req.get_body_data()
-    ngx.say("Hello World",data);
+    --ngx.say("Hello World",data);
+    local res = ngx.location.capture('/wec-counselor-apps',
+            {
+                method = ngx.HTTP_GET
+            }
+    )
+
+    if 200 ~= res.status then
+        ngx.exit(res.status)
+    end
+    ngx.say(res.body)
+
 end;
 
 main()
