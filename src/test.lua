@@ -13,6 +13,8 @@ local function main()
     --ngx.say("obj.age ",obj.is_male)
     ngx.log(ngx.INFO, "INSERT");
     local data = ngx.req.get_body_data()
+    local data1 = ngx.req.get_body_data()
+
     --ngx.say("Hello World",data);
     local res = ngx.location.capture('/wec-counselor-apps',
             {
